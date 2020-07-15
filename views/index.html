@@ -1,0 +1,15 @@
+<section>
+<p>
+    <?php 
+    $i = 0;
+    while($row = $result->fetch()){
+        echo "<article><p>{$row->getcontenthead()}</p> <p>{$row->getdateAdded()}</p> <a href=\"showpage.php?id={$row->getpageid()}\"> click here for more</a> </article>";
+        $i += 1;
+         if ($i === 3){
+         break;}
+    }
+?>
+</p>
+
+
+</section>

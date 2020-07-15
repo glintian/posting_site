@@ -1,0 +1,9 @@
+
+
+<form action="showpage.php" method="POST">
+    <label for="text">名前</label><br>
+    <input type="text" name="name" value="<?= $user ?>"> <br>
+    <textarea name="comment" id="" cols="30" rows="10"></textarea>
+    <input type="hidden" name="pageid" value=" <?= $_GET['id'] ?> ">
+    <input type="submit" name="submit">
+</form>
