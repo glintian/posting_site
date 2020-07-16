@@ -51,7 +51,7 @@ if ($comments){
 if (isset($user)){
     include('views/showpage.html');
 }else {
-    echo "Please login to post a comment.";
+    echo "投稿をするにはログインをしてください。";
 } 
 
 if (isset($_SERVER['REQEUST_METHOD']) 

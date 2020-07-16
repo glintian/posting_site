@@ -10,14 +10,15 @@
         <?php } ?>
         <!-- ログインフォーム -->
     <form action="login.php" method="post">
-        <label for="name">Name<br/></label>
+        <label for="name">お名前<br/></label>
         <input type="text" name="username" value="<?= e($_COOKIE['username'] ?? '') ?> " required><br>
-        <label for="name">E-mail Address<br></label>
+        <label for="name">メールアドレス<br></label>
         <input type="text" name="email" value="<?= e($_COOKIE['email'] ?? '') ?>" required><br>
         <input type="submit" value="submit">
-        <label for="remeber"> remember me</label>
+        <label for="remeber"> 記憶する</label>
         <input type="checkbox" name="remember">
     </form>
-    <p>if you have not registered.</p>
-    <a href="register.php" class="button">Register</a>
+   <br> 
+    <div>登録されていない方はこちらへ<div>
+    <a href="register.php" class="button">登録</a>
 </section>

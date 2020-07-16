@@ -51,16 +51,18 @@ function comments($id, $link){
     return $result;
 }
 
-//usernameによるユーザー検索 userオブジェクトを返す $emailを渡せばemailもあっているか確認し、合っていればやはりuserオブジェクトを返す,　$emailを渡さなければusernameだけを検索有ればユーザーオブジェクトを返す。一致なければfalseを返す。
+//usernameによるユーザー検索 userオブジェクトを返す $emailを渡せばemailもあっているか確認し、合っていればやはりuserオブジェクトを返す,　$emailを渡さなければusernameだけを検索。usernameが有ればユーザーオブジェクトを返す。一致なければfalseを返す。
 function finduser($username, $link, $email = False){
     $result = $link->prepare('SELECT * FROM users where username=:username');
     $result->bindvalue(':username', $username);
     $result->execute();
     $result->setFetchMode(PDO::FETCH_CLASS, 'User');
     $row = $result->fetch();
+    #emailとusername両方が合致しているかの確認
     if ($row && isset($email) && (trim($email) === trim($row->getemail())))
         return $row;
-    else if ($row && (trim($row->getusername()) === trim($username)))
+    #emailが引数として与えられなかったとき、usernameのみの確認
+    else if (!$email && $row && (trim($row->getusername()) === trim($username)))
         return $row;
     else
         return false;

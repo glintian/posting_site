@@ -15,7 +15,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD'] === "POST")
             try{
             $q =  "INSERT INTO users values(null, \"public\", :username, :email, \"pass\", current_timestamp())";
             $result = $link->prepare($q);
-            $result->execute(array(':username' => $_POST['username'], ':email' => $_POST['email']));
+            $result->execute(array(':username' => $_POST['username'], ':email' => sha1(($_POST['email']))));
             }
             catch (PDOException $e){
                 $pagetitle = "Error";

@@ -17,6 +17,6 @@
         <li><a href="contact.php">コンタクト</a></li>
         <li><?php echo isset($user) ? "<a href=\".\logout.php?={$pagetitle}\">ログアウト</a>" :  "<a href=\"login.php\">ログイン</a>" ?></li>
         <li><a href="register.php">登録</a></li>
-        <li><a href="submit.php">submit</a></li>
+        <li><a href="submit.php">投稿</a></li>
     </ul>
 </nav> 

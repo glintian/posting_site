@@ -6,7 +6,7 @@ include('includes/header.inc.php');
 
 
 if (!isset($user)){
-    echo "Please login first.";
+    echo "ログインをしてください。";
     exit;
 }
 
