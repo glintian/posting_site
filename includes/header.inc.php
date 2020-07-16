@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<h1>this is header</h1>
+<h1>コメント投稿サイト</h1>
 <nav>
     <p style="text-align: right"> <?php if(isset($user)) {
-        echo $user;} ?> </p>
+        echo "こんにちは、" . $user;} ?> </p>
     <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="#">Archive</a></li>
-        <li><a href="contact.php">Contact</a></li>
-        <li><?php echo isset($user) ? "<a href=\".\logout.php?={$pagetitle}\">Logout</a>" :  "<a href=\"login.php\">Login</a>" ?></li>
-        <li><a href="register.php">register</a></li>
+        <li><a href="index.php">ホーム</a></li>
+        <li><a href="#">アーカイブ</a></li>
+        <li><a href="contact.php">コンタクト</a></li>
+        <li><?php echo isset($user) ? "<a href=\".\logout.php?={$pagetitle}\">ログアウト</a>" :  "<a href=\"login.php\">ログイン</a>" ?></li>
+        <li><a href="register.php">登録</a></li>
         <li><a href="submit.php">submit</a></li>
     </ul>
 </nav> 
