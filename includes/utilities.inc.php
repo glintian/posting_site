@@ -14,13 +14,17 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 // $_SERVER['REQUEST_URI']
 //データベースへの接続
 try{
-    $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+    $db = parse_url(getenv('CLEARDB_DATABASE_URL'));
     $db['dbname'] = ltrim($db['path'], '/');
-    $hostname = getenv('hostname');
-    $database = getenv('database');
+    // $hostname = getenv('hostname');
+    $hostname = $db["host"];
+    $dbuser = $db["user"];
+    $password = $db["pass"];
+    // $database = getenv('database');
+    $user = $hostname . "database is " . $database;
     $dsn ="mysql:host={$hostname};dbname={$database};charset=utf8";
-    $dbuser = getenv('username'); 
-    $password = getenv('password');
+    // $dbuser = getenv('username'); 
+    // $password = getenv('password');
     $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
