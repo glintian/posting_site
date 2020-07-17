@@ -16,8 +16,9 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 try{
     $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
     $db['dbname'] = ltrim($db['path'], '/');
-    $user = getenv('hostname');
-    $dsn =sprintf("mysql:host=%;dbname=%;charset=utf8", getenv('hostname'), getenv('database'));
+    $hostname = getenv('hostname');
+    $database = getenv('database');
+    $dsn ="mysql:host={$hostname};dbname={$database};charset=utf8";
     $dbuser = getenv('username'); 
     $password = getenv('password');
     $options = array(
@@ -25,7 +26,7 @@ try{
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
   );
-    $link = new PDO($dsn,$user,$password,$options);
+    $link = new PDO($dsn,$dbuser,$password,$options);
     $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch (PDOException $e){
