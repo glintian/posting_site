@@ -16,8 +16,8 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 try{
     $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
     $db['dbname'] = ltrim($db['path'], '/');
-    $user = getenv('hostname');
-    $database = getenv('database');
+    $hostname = getenv('hostname');
+    $user = getenv('database');
     $dsn ="mysql:host={$hostname};dbname={$database};charset=utf8";
     $dbuser = getenv('username'); 
     $password = getenv('password');
