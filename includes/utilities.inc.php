@@ -14,7 +14,17 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 // $_SERVER['REQUEST_URI']
 //データベースへの接続
 try{
-    $link = new PDO("mysql:host = localhost;dbname=cms", "root", "mysqlpass");
+    $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+    $db['dbname'] = ltrim($db['path'], '/');
+    $user =sprintf("mysql:host=%;dbname=%;charset=utf8", getenv('hostname'), getenv('database'));
+    $dbuser = getenv('username'); 
+    $password = getenv('password');
+    $options = array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
+  );
+    $link = new PDO($dsn,$user,$password,$options);
     $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch (PDOException $e){
