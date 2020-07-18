@@ -15,7 +15,7 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 //データベースへの接続
 try{
     $db = parse_url(getenv('CLEARDB_DATABASE_URL'));
-    $db['dbname'] = ltrim($db['path'], '/');
+    $db['dbname'] = substr($db['path'], 1);
     // $hostname = getenv('hostname');
     $hostname = $db["host"];
     $dbuser = $db["user"];
