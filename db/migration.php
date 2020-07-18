@@ -2,7 +2,7 @@
 
 try{
     $db = parse_url(getenv('CLEARDB_DATABASE_URL'));
-    $db['dbname'] = ltrim($db['path'], '/');
+    $database = ltrim($db['path'], '/');
     // $hostname = getenv('hostname');
     $hostname = $db["host"];
     $dbuser = $db["user"];
