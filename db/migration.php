@@ -22,7 +22,7 @@ require('includes/utilities.inc.php');
     $result = $link->exec($q);
 
 #usersテーブルの作成
-  $q = "CREATE TABLE comments(
+  $q = "CREATE TABLE users(
     id int(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL, 
     userType enum('public', 'author', 'admin') NOT NULL,
     username varchar(30) UNIQUE,
