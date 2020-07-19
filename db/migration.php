@@ -31,4 +31,4 @@ try{
       content text NOT NULL,
       dateUpdated timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
       dateAdded NOT NULL timestamp";
-          
+      $result = $link->query($q);  
