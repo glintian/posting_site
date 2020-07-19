@@ -25,10 +25,10 @@ try{
 
 
     $q = "CREATE TABLE pages(
-      id int(10) UNSGINED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+      id int(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
       creatorID int(10) UNSIGNED NOT NULL,
       title varchar(100) NOT NULL,
       content text NOT NULL,
       dateUpdated timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
       dateAdded NOT NULL timestamp";
-          
+      $result = $link->query($q);  
