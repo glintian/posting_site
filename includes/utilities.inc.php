@@ -15,13 +15,13 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 //データベースへの接続
 try{
     $db = parse_url(getenv('CLEARDB_DATABASE_URL'));
-    $db['dbname'] = substr($db['path'], 1);
+    $database = substr($db['path'], 1);
     // $hostname = getenv('hostname');
     $hostname = $db["host"];
     $dbuser = $db["user"];
     $password = $db["pass"];
     // $database = getenv('database');
-    $user = $hostname . "database is " . $database;
+    $user = $hostname . "database is here" . $database;
     $dsn ="mysql:host={$hostname};dbname={$database};charset=utf8";
     // $dbuser = getenv('username'); 
     // $password = getenv('password');
