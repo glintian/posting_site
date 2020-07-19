@@ -30,5 +30,5 @@ try{
       title varchar(100) NOT NULL,
       content text NOT NULL,
       dateUpdated timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
-      dateAdded NOT NULL timestamp";
+      dateAdded timestamp NOT NULL";
       $result = $link->query($q);  
