@@ -3,15 +3,10 @@
 try{
     $db = parse_url(getenv('CLEARDB_DATABASE_URL'));
     $database = substr($db['path'], 1);
-    // $hostname = getenv('hostname');
     $hostname = $db["host"];
     $dbuser = $db["user"];
     $password = $db["pass"];
-    // $database = getenv('database');
-    $user = $hostname . "database is " . $database;
     $dsn ="mysql:host={$hostname};dbname={$database};charset=utf8";
-    // $dbuser = getenv('username'); 
-    // $password = getenv('password');
     $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -27,3 +22,8 @@ try{
         include('includes/footer.inc.php');
         exit(); //エラーが起きたときにその後の処理を中断
     }
+
+
+    $q = "CREATE TABLE pages(id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, creatorID int(10) NOT NULL, title varchar(100) NOT NULL, content text NOT NULL, dateUpdated timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL, dateAdded timestamp DEFAULT 0000-00-00 00:00:00";
+    $result = $link->query($q);
+    return $page;
