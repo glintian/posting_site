@@ -20,7 +20,6 @@ try{
         require('db/dblocal.php');
     }
     else {
-        print $_SERVER['HTTP_HOST'];
         $db = parse_url(getenv('CLEARDB_COBALT_URL'));
         $database = substr($db['path'], 1);
         $hostname = $db["host"];
