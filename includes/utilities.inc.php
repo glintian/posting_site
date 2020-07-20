@@ -4,7 +4,8 @@
 #クラスのオートロード
 function class_loader($class){
     require('class/' . $class . '.php');
-}spl_autoload_register('class_loader');
+}
+spl_autoload_register('class_loader');
 
 //セッションの開始
 session_start();
@@ -14,15 +15,22 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 // $_SERVER['REQUEST_URI']
 //データベースへの接続
 try{
-    $db = parse_url(getenv('CLEARDB_COBALT_URL'));
-    $database = substr($db['path'], 1);
-    $hostname = $db["host"];
-    $dbuser = $db["user"];
-    $password = $db["pass"];
+    if (!isset($_SERVER['HTTP_HOST']) ||    
+         mb_strpos($_SERVER['HTTP_HOST'], 'localhost')===0 ){
+        require('db/dblocal.php');
+    }
+    else {
+        print $_SERVER['HTTP_HOST'];
+        $db = parse_url(getenv('CLEARDB_COBALT_URL'));
+        $database = substr($db['path'], 1);
+        $hostname = $db["host"];
+        $dbuser = $db["user"];
+        $password = $db["pass"];
+    }
     $dsn ="mysql:host={$hostname};dbname={$database};charset=utf8";
     $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
   );
     $link = new PDO($dsn,$dbuser,$password,$options);

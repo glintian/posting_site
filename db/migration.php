@@ -1,6 +1,7 @@
 <?php 
 require('includes/utilities.inc.php');
 
+print $database;
 #pages テーブルの作成
   $q = "CREATE TABLE pages(
     id int(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL, 
