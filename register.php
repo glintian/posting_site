@@ -9,7 +9,6 @@ if (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD'] === "POST")
     $v = new MyValidator();
     if ($v->emailcheck($_POST['email'])){
         if (finduser($_POST['username'], $link)){
-            var_dump(finduser($_POST['username'], $link));
             $v->adderror("そのusernameはすでに使われています。{$_POST['username']}");
         } else{
             try{

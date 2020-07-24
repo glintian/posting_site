@@ -7,7 +7,8 @@ include('class/validation.php');
 
 
 //gobackボタンのためにレファラを取得
-if (isset($_SERVER["HTTP_REFERER"]) && !strpos($_SERVER["HTTP_REFERER"], "logout")){
+if (isset($_SERVER["HTTP_REFERER"]) && 
+   !strpos($_SERVER["HTTP_REFERER"], "logout")){
     $referer = $_SERVER["HTTP_REFERER"];
 }
 

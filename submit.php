@@ -12,11 +12,8 @@ if (!isset($user)){
 
 include('views/submit.html');
 if (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']=== "POST")){
-    // var_dump($user);
     $userinfo = finduser($user, $link);
-        var_dump($userinfo->getuserid());
     if ($userinfo = finduser($user, $link)){
-        echo "hello";
         try{
         $q =  "INSERT INTO pages VALUES(null, :creatorid, :title, :content, current_timestamp(), current_timestamp())";
         $result = $link->prepare($q);
