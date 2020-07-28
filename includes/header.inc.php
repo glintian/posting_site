@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<h1>コメント投稿サイト</h1>
-<nav>
-    <p style="text-align: right"> <?php if(isset($user)) {
-        echo "こんにちは、" . $user;} ?> </p>
-    <ul>
-        <li><a href="index.php">ホーム</a></li>
-        <li><a href="contact.php">コンタクト</a></li>
-        <li><?php echo isset($user) ? "<a href=\".\logout.php?={$pagetitle}\">ログアウト</a>" :  "<a href=\"login.php\">ログイン</a>" ?></li>
-        <li><a href="register.php">登録</a></li>
-        <li><a href="submit.php">投稿</a></li>
-    </ul>
-</nav> 
+  <header>
+    <div class="h1">
+    <h1>コメント投稿サイト</h1>
+    </div>
+    <nav>
+        <span class="username" style="text-align: right"> <?php if(isset($user)) {
+            echo "こんにちは、" . $user;} ?> </span>
+        <ul>
+            <li><a href="index.php">ホーム</a></li>
+            <li><a href="contact.php">コンタクト</a></li>
+            <li><?php 
+            echo isset($user) ? "<a href=\".\logout.php?={$pagetitle}\">ログアウト</a>" :  "<a href=\"login.php\">ログイン</a>" ?></li>
+            <li><a href="register.php">登録</a></li>
+            <li><a href="submit.php">投稿</a></li>
+        </ul>
+    </nav> 
+  </header>

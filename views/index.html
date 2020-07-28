@@ -4,7 +4,7 @@
     $i = 0;
     while($row = $result->fetch()){
         echo "
-        <article>
+        <article class=\"articles\">
             <p>{$row->getcontenthead()}</p> 
             <p>{$row->getdateAdded()}</p> 
             <a href=\"showpage.php?id={$row->getpageid()}\">すべて表示</a>

@@ -1,7 +1,7 @@
 p.author{
-font-style: italic;
+    font-style: italic;
 }
-
+    
 .button {
     font: 11px Meiryo;
     text-decoration: none;
@@ -12,7 +12,94 @@ font-style: italic;
     border-right: 1px solid #333333;
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
-  }
-  .submit1{
+}
+
+.submit1{
     margin-top: 20px;
-  }
+}
+
+/* ヘッダー フッター*/
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav {
+    background-color: rgb(20, 230, 219);
+    text-align: right;
+}
+
+nav.footer{
+    background-color: rgb(20, 230, 219);
+    text-align: right;
+    width: 100vw;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+}
+
+li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: #E7DA66;
+}
+
+div.h1 {
+    height: 100px;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    background-color: #1826e0;
+    color: aliceblue;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h1.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 0px;
+    width: 100vw;
+    height: 80px;
+    padding: 0;
+    border: 0;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.articles{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/* ボディ */
+body{
+    margin: 300px 0px 0px 0px;
+    background-color: rgb(70, 75, 102);
+    width: 100vw;
+    padding: 0px;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+section {
+    flex: 1;
+}
