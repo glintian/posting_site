@@ -1,6 +1,6 @@
 
 
-</main>
+
 <nav class="footer">
     <ul>
         <li><a href="index.php">ホーム</a></li>

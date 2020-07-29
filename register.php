@@ -29,3 +29,4 @@ if (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD'] === "POST")
 }
 
 include('views/register.html');
+include('includes/footer.inc.php');

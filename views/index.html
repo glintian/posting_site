@@ -1,5 +1,6 @@
 <section>
 <p>
+    <h2>新着記事の一覧</h2>
     <?php 
     $i = 0;
     while($row = $result->fetch()){
@@ -7,7 +8,7 @@
         <article class=\"articles\">
             <p>{$row->getcontenthead()}</p> 
             <p>{$row->getdateAdded()}</p> 
-            <a href=\"showpage.php?id={$row->getpageid()}\">すべて表示</a>
+            <a href=\"showpage.php?id={$row->getpageid()}\">記事を表示</a>
          </article>";
         $i += 1;
          if ($i === 3){

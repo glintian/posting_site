@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
 ?>
 
 <h1><?php echo e($page->title); ?></h1>
-<p class="author"><?= e($userobj->getusername()) ?></p>
+<p class="author"><?= "投稿者:" . e($userobj->getusername()) ?></p>
 <p><?= $page->getcontent() ?></p>
-<p>Comments</p>
+<h3>コメント一覧</h3>
 <ul>
     
 <?php 

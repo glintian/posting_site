@@ -40,7 +40,9 @@ if (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD'] === "POST")
 if ($user){
 include('views/logout.html');
 }else{
+    echo "<section>";
     echo "ログアウトをしました";
+    echo "</section>";
     // header("Location:index.php");
 }
 
