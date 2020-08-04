@@ -45,7 +45,7 @@ try{
 
 //idによるuser, およびpageの情報取得
 function page($id, $link){
-    $q = "SELECT title, content, creatorId, DATE_FORMAT(dateAdded, \"%e %M  %Y\") As dateAdded FROM pages where id={$id}";
+    $q = "SELECT id, title, content, creatorID, DATE_FORMAT(dateAdded, \"%e %M  %Y\") As dateAdded FROM pages where id={$id}";
     $result = $link->query($q);
     //Pageクラスでフェッチ
     $result->setFetchMode(PDO::FETCH_CLASS, 'Page');

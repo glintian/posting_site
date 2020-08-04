@@ -1,0 +1,12 @@
+
+<section>
+    <form action="deletecomment.php" method="post">
+        <label for="deleteComment">記事を削除しますか?
+        </label> <br>
+        <button type="submit" name="deleteComment2" value="deleteComment">削除</button>
+        <button type="submit" name="goback" value="goback">戻る</button>
+        <?php  echo
+        "<input type=\"hidden\" name=\"pageid\" value=\"{$_POST['pageid']}\"></input>"
+        ?>
+    </form>
+    </section>

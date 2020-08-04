@@ -13,10 +13,10 @@ if (isset($_SERVER["HTTP_REFERER"]) &&
 }
 
 if (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD'] === "POST")){
-    echo "received";
     if (isset($_POST['logout'])){ 
     // Clear the variable:
     $user = null;
+    $currentUser = null;
     
     // Clear the session data:
     $_SESSION = array();

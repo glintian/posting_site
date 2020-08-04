@@ -10,8 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
     $v->requiredCheck($_POST['username'], 'ISBNコード');   // 必須検証
     
     if ($v->emailcheck($_POST['email'])){
-        if (finduser($_POST['username'], $link, sha1($_POST['email']))){
+        if ($currentUser = finduser($_POST['username'], $link, sha1($_POST['email']))){
             $_SESSION['user'] = $_POST['username'];
+            $_SESSION['userId'] = $currentUser->getuserid(); 
             if (isset($_POST['remember'])){
                 setcookie('email', $_POST['email'], time() + (60 * 60 * 24 * 90));
                 setcookie('username', $_POST['username'], time() + (60 * 60 * 24 * 90));
@@ -19,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
             header("Location:index.php");
         }
          else{
-        echo "Enter the correct username and email address.";
+        echo "正しいユーザーネームとパスワードを入力してください.";
          }
 
     }
