@@ -46,13 +46,6 @@ if (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD'] === "POST")
     }
 }
 
-// if ($user){
-// include('views/deleteComment.html');
-// }else{
-//     echo "<section>";
-//     echo "ログアウトをしました";
-//     echo "</section>";
-//     // header("Location:index.php");
-// }
+
 
 include('includes/footer.inc.php'); 
