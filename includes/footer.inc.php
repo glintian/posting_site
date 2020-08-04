@@ -9,6 +9,6 @@
         <li><a href="register.php">登録</a></li>
     </ul>
 </nav>
-<h1 class="footer">コメント投稿サイト</h1>
+<h1 class="footer">記事投稿サイト</h1>
 </body>
 </html>

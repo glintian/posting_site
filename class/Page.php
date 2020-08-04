@@ -3,8 +3,8 @@
 
 class Page{
     private $id;
-    private $creatorid;
-    public $dateAdded;
+    private $creatorID;
+    private $dateAdded;
     private $dateUpdated;
     private $content;
     private $contenthead;
@@ -15,7 +15,7 @@ class Page{
     }
 
     public function getcreatorid(){
-        return $this->creatorid;
+        return $this->creatorID;
     }
 
     public function getdateAdded(){

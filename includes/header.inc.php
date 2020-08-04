@@ -9,7 +9,7 @@
 <body>
   <header>
     <div class="h1">
-    <h1>コメント投稿サイト</h1>
+    <h1>記事投稿サイト</h1>
     </div>
     <nav>
         <span class="username" style="text-align: right"> <?php if(isset($user)) {
