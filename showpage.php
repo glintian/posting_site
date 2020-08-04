@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
 echo "<section>";
 if (isset($_SESSION['userId']) && ($page->getcreatorid()) === $_SESSION['userId']){
     $id = $page->getpageid();
-    echo "<form class=\"deleteComment\" action=\"deleteComment.php\" method=\"POST\">
+    echo "<form class=\"deleteComment\" action=\"deletecomment.php\" method=\"POST\">
     <button type=\"submit\" name=\"deleteComment\" value=\"deleteComment\">記事の削除</button>
     <input type=\"hidden\" name=\"pageid\" value=\"{$id}\"></input>
 </form>";
